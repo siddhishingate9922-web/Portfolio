@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhi Shingate | Portfolio</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+        html { scroll-behavior: smooth; }
+
+        body { background: #d1fae5; color: #064e3b; }
+
+        /* NAVBAR */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 10%; background: #a7f3d0; position: sticky; top: 0; z-index: 1000;
+        }
+        nav h2 { color: #065f46; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a { text-decoration: none; color: #065f46; font-weight: bold; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            justify-content: space-between; padding: 0 10%;
+        }
+        .hero-text { max-width: 50%; }
+        .hero-text h1 { font-size: 50px; margin-bottom: 10px; }
+        .hero-text h2 { color: #047857; margin-bottom: 15px; }
+        .hero-text p { line-height: 1.6; margin-bottom: 20px; }
+
+        .btn { padding: 12px 25px; border-radius: 30px; border: none; cursor: pointer; margin-right: 10px; }
+        .btn-primary { background: #10b981; color: white; }
+        .btn-outline { background: transparent; border: 2px solid #10b981; color: #047857; }
+
+        .hero-image img {
+            width: 2000px; height: 2000px; border-radius: 50%;
+            object-fit: cover; border: 6px solid #10b981;
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.4);
+        }
+
+        section { padding: 80px 10%; }
+        h3 { font-size: 32px; margin-bottom: 25px; color: #065f46; }
+
+        /* ABOUT */
+        .about p { max-width: 900px; line-height: 1.7; }
+
+        /* EDUCATION */
+        .education-item { margin-bottom: 20px; }
+
+        /* SKILLS */
+        .skills-section {
+    width: 80%;
+    margin: 50px auto;
+    color: white;
+}
+
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #38f8b5;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    animation: fillAnimation 2s ease forwards;
+}
+
+/* Individual skill levels */
+.skill-fill.html { width: 90%; background: #e44d26; }
+.skill-fill.css { width: 85%; background: #264de4; }
+.skill-fill.js { width: 75%; background: #f0db4f; }
+.skill-fill.java { width: 80%; background: #f89820; }
+.skill-fill.python { width: 85%; background: #306998; }
+
+/* Animation */
+@keyframes fillAnimation {
+    from { width: 0; }
+}
+
+        /* EXPERIENCE */
+        .experience-item { margin-bottom: 20px; }
+
+        /* PROJECTS */
+ 
+         .projects {
+    padding: 80px 10%;
+}
+
+/* Heading aligned normally */
+.projects h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.project-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+/* INNER */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* FLIP EFFECT */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    padding: 20px;
+}
+
+/* FRONT */
+.card-front {
+    background: #1e293b;
+    color: white;
+}
+
+/* BACK */
+.card-back {
+    background: #38f8b5;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+/* HOVER EFFECT */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(56, 248, 181, 0.4);
+}
+
+/* LINKS */
+.card-back a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+}
+        /* ACHIEVEMENTS */
+        .achievements ul { line-height: 1.8; }
+
+        /* CONTACT */
+        .contact a { color: #047857; text-decoration: none; font-weight: bold; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 20px; background: #a7f3d0; margin-top: 40px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; gap: 40px; }
+            .hero-text { max-width: 100%; }
+            .hero-image img { width: 280px; height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>PORTFOLIO</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>SIDDHI SHINGATE</h1>
+            <h2>Computer Engineering Student | Developer | Research Enthusiast</h2>
+            <p>
+                Passionate about building scalable software solutions, exploring emerging technologies,
+                and contributing to impactful research and innovation.
+            </p>
+            <a href="#contact"><button class="btn btn-primary">Connect With Me</button></a>
+            <a href="resume.jpeg"><button class="btn btn-outline">Resume</button></a>
+        </div>
+        <div class="hero-image">
+            <img src="image.png" alt="Profile Photo" style="width:400px;height:400px;border-radius:50%;object-fit:cover;object-position: 50% 10%;">
+        </div>
+        
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <h3>About Me</h3>
+        <p>
+             I am a passionate Computer Engineering student at MIT Academy of Engineering, 
+    driven by curiosity and a strong desire to build impactful digital solutions. 
+    I enjoy solving real-world problems through technology and continuously improving 
+    my skills in programming, web development, and research.
+
+    I have a keen interest in software development, data structures, and emerging 
+    technologies. I believe in writing clean, efficient code and creating user-friendly 
+    applications.
+
+    Apart from academics, I actively explore new tools and technologies, participate 
+    in projects, and strive to grow as a developer every day.
+        </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <h3>Education</h3>
+        <div class="education-item">
+            <h4>B.Tech in Computer Engineering</h4> 
+            <p>MIT Academy of Engineering , Pune | 2025 - 2029</p> <br><br>
+            <h4>Higher Secondary Education : </h4>
+             <p>Sanjay Ghodawat IIT and Medical Academy (SGIMA) | 2023-2025 <br>
+             Class 12th board percentage = 80% (HSC Boards)</p>  <br><br>
+             <h4>Secondary Education : </h4><p>
+             Sinhgad Public School | 2023 <br>
+             Class 10th board percentage = 97% (CBSE Board)</p>
+            
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skills</title>
+
+<style>
+    body {
+        background: #d1fae5; /* light green background */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .skills-section {
+        width: 80%;
+        margin: 60px auto;
+    }
+
+    /* KEEP YOUR HEADING STYLE SAME */
+    .skills-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .skill {
+        margin-bottom: 25px;
+    }
+
+    /* LANGUAGE TEXT COLOR */
+    .skill p {
+        margin-bottom: 8px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #065f46; /* dark green text */
+    }
+
+    /* BAR BACKGROUND */
+    .skill-bar {
+        width: 100%;
+        height: 14px;
+        background: #a7f3d0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* FILL */
+    .skill-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 20px;
+        animation: fillAnimation 2s ease forwards;
+        position: relative;
+    }
+
+    /* HTML (Highest) 🔥 */
+    .html {
+        width: 95%;
+        background: linear-gradient(90deg, #ff512f, #dd2476);
+        box-shadow: 0 0 15px #ff512f;
+    }
+
+    /* CSS */
+    .css {
+        width: 85%;
+        background: linear-gradient(90deg, #36d1dc, #5b86e5);
+        box-shadow: 0 0 15px #36d1dc;
+    }
+
+    /* Python */
+    .python {
+        width: 80%;
+        background: linear-gradient(90deg, #56ab2f, #a8e063);
+        box-shadow: 0 0 15px #56ab2f;
+    }
+
+    /* C */
+    .c {
+        width: 75%;
+        background: linear-gradient(90deg, #7f00ff, #e100ff);
+        box-shadow: 0 0 15px #7f00ff;
+    }
+
+    /* ANIMATION */
+    @keyframes fillAnimation {
+        from { width: 0; }
+    }
+
+    /* COOL HOVER EFFECT ✨ */
+    .skill-fill:hover {
+        transform: scaleY(1.3);
+        filter: brightness(1.2);
+        transition: 0.3s;
+    }
+</style>
+
+</head>
+
+<body>
+
+ <section class="skills" id="skills">
+        <h3>Technical Skills</h3>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="skill-bar">
+            <div class="skill-fill html"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="skill-bar">
+            <div class="skill-fill css"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="skill-bar">
+            <div class="skill-fill python"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>C</p>
+        <div class="skill-bar">
+            <div class="skill-fill c"></div>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h3>Experience</h3>
+        <div class="experience-item">
+          <b><p style="color:#065f46; font-size: 25px;">Personal Projects Experience</p></b><br>
+           Frontend & Web Development (Self Projects)<br>
+
+Developed multiple web-based projects including a digital portfolio and finance management system
+Implemented responsive UI using HTML and CSS
+Focused on user experience and interactive design elements<br><br>
+ <b><p style="color:#065f46; font-size: 25px;">Academic Experience</p></b><br>
+ Digital Electronics Project – Parking Counter System
+ Designed a bidirectional car parking counter using logic gates and sensors
+ Implemented real-time vehicle counting system
+ Improved understanding of sequential logic and circuit design<br><br>
+
+ <b><p style="color:#065f46; font-size: 25px;">Technical Experience</p></b><br>
+         IoT-Based Electronic Voting Machine
+Built a smart voting system using Arduino and IoT modules
+Integrated real-time data transmission and vote tracking
+Explored embedded systems and hardware-software integration<br><br>
+
+ <b><p style="color:#065f46; font-size: 25px;">Learning / Skill Development</p></b><br>
+Technical Skill Development
+Learning programming languages including C, Python, and Java
+Exploring web development and IoT technologies
+Practicing problem-solving and logical thinking
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+   <section class="projects">
+    <h3>My Projects</h3>
+
+    <div class="project-container">
+
+        <!-- PROJECT CARD -->
+        <div class="card">
+            <div class="card-inner">
+
+                <!-- FRONT -->
+                <div class="card-front">
+                    <h2>Digital Portfolio</h2><br>
+                    <p>Interactive personal portfolio website</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="card-back">
+                    <p><b>Tech:</b>HTML,CSS</p>
+                    <p>Designed and developed a responsive personal portfolio to showcase projects, skills, and achievements.</p>
+                    <a href="#">Live Demo</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COPY THIS CARD FOR MORE PROJECTS -->
+
+         <!-- PROJECT CARD -->
+        <div class="card">
+            <div class="card-inner">
+
+                <!-- FRONT -->
+                <div class="card-front">
+                    <h2>Bidirectional Car Parking Counter</h2><br>
+                    <p>Tracks real-time parking occupancy</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="card-back">
+                    <p><b>Tech:</b> Digital Electronics, Logic Gates, Sensors</p>
+                    <p>Designed a bidirectional car parking counter system to monitor vehicle entry and exit in real time.
+                     Implemented logic using sensors and counters to increment/decrement count based on vehicle movement direction.
+                     Ensures accurate space tracking and prevents overflow beyond parking capacity.</p>
+                    <a href="https://drive.google.com/file/d/1_dnmK5k7oxZBqOlWigc72wkfO1U5vesG/view?usp=drivesdk" "target="_blank">Live Demo</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COPY THIS CARD FOR MORE PROJECTS -->
+
+         <!-- PROJECT CARD -->
+        <div class="card">
+            <div class="card-inner">
+
+                <!-- FRONT -->
+                <div class="card-front">
+                    <h2>Finance Manager for Hostel Students</h2><br>
+                    <p>Smart expense tracking for PG/hostel life</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="card-back">
+                    <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+                    <p>Designed a user-friendly website to help hostel and PG students manage daily expenses and budgets efficiently.
+                       Implemented expense tracking, budget planning, and simple UI for easy financial monitoring.
+                       Helps students develop better financial habits and avoid overspending.</p>
+                    <a href="#">Live Demo</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COPY THIS CARD FOR MORE PROJECTS -->
+
+         <!-- PROJECT CARD -->
+        <div class="card">
+            <div class="card-inner">
+
+                <!-- FRONT -->
+                <div class="card-front">
+                    <h2>IoT-Based Electronic Voting Machine</h2><br>
+                    <p>Secure and real-time digital voting solution</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="card-back">
+                    <p><b>Tech:</b> Arduino, IoT Modules, Embedded C</p>
+                    <p>Designed and developed a smart voting system that records votes electronically and transmits data in real time using IoT technology.
+                       Integrated hardware components with IoT for secure vote casting and live monitoring.
+                       Improves voting reliability, reduces fraud, and ensures faster result processing.</p>
+                    <a href="#">Live Demo</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COPY THIS CARD FOR MORE PROJECTS -->
+
+    </div>
+</section>
+
+    <!-- ACHIEVEMENTS -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Certificates</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #d1fae5; /* light green */
+        margin: 0;
+    }
+
+    /* SECTION */
+    .cert-section {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .cert-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* GRID */
+    .cert-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    /* CARD */
+    .cert-card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* HOVER EFFECT 🔥 */
+    .cert-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+
+    .cert-card h3 {
+        margin-bottom: 10px;
+        color: #065f46;
+    }
+
+    .cert-card p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* POPUP MODAL */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        width: 300px;
+        animation: popup 0.4s ease;
+    }
+
+    /* POPUP ANIMATION */
+    @keyframes popup {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .modal-content a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #10b981;
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+    }
+
+    .close {
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+
+ <section id="Achievements & Certificates">
+        <h3>Achievements & Certificates</h3>
+
+    <div class="cert-container">
+
+        <!-- CARD 1 -->
+        <div class="cert-card" onclick="openModal('Web Development Certificate','https://yourlink1.com')">
+           <b><p style="color:#065f46; font-size: 30px;">App Davelopment</p></b><br>
+            <a href="robotics-certificate.jpeg">Click to view certificate</a>
+        
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="cert-card" onclick="openModal('Python Certificate','https://yourlink2.com')">
+         <b><p style="color:#065f46; font-size: 30px;">NASSCOM</p></b><br>
+            <a href="nasscom.png">Click to view certificate</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+            <b><p style="color:#065f46; font-size: 30px;">Infosys</p></b><br>
+            <a href="infosys.png">Click to view certificate</a>
+        </div>
+
+         <!-- CARD 4 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+           <b><p style="color:#065f46; font-size: 30px;">Cisco Certificate</p></b><br>
+            <a href="cisco.png">Click to view certificate</a>
+        </div>
+
+         <!-- CARD 5 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+            <b><p style="color:#065f46; font-size: 30px;">IBM Skillsbuild</p></b><br>
+            <a href="IBM.png">Click to view cdertificate</a>
+        </div>
+
+         <!-- CARD 6 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+            <b><p style="color:#065f46; font-size: 30px;">Claude 101</p></b><br>
+            <a href="claude.png">Click to view cdertificate</a>
+
+        </div>
+
+         <!-- CARD 7 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+            <b><p style="color:#065f46; font-size: 30px;">AI Fluency:<br>Framework & Foundations</p></b><br>
+            <a href="AIFluency.png">Click to view cdertificate</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+           <b><p style="color:#065f46; font-size: 30px;">AI Fluency for students</p></b><br>
+            <a href="AIFluencyforstudents.png">Click to view cdertificate</a>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="cert-card" onclick="openModal('C Programming Certificate','https://yourlink3.com')">
+            <b><p style="color:#065f46; font-size: 30px;">AI Fluency for nonprofits</p></b><br>
+            <a href="AINonProfits.png">Click to view cdertificate</a>
+        </div>
+
+        <!-- ADD MORE CARDS SAME WAY -->
+
+    </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3 id="certTitle"></h3>
+        <a id="certLink" href="#" target="_blank">View Certificate</a>
+        <span class="close" onclick="closeModal()">Close</span>
+    </div>
+</div>
+
+<script>
+function openModal(title, link) {
+    document.getElementById("certTitle").innerText = title;
+    document.getElementById("certLink").href = link;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h3>Contact Me</h3>
+        <p>Email: siddhishingate9922@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/siddhi-shingate-3a8280386" target="_blank">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="https://github.com/siddhishingate9922-web" target="_blank">github.com/yourusername</a></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Built with passion by Siddhi Shingate © 2026</p>
+    </footer>
+
+</body>
+</html>
