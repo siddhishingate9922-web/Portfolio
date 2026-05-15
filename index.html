@@ -47,8 +47,180 @@
         /* ABOUT */
         .about p { max-width: 900px; line-height: 1.7; }
 
-        /* EDUCATION */
-        .education-item { margin-bottom: 20px; }
+        /* SECTION */
+.roadmap-section{
+    padding: 80px 10%;
+    background: #f8fffb;
+}
+
+/* TITLE */
+.section-title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #0f172a;
+}
+
+/* SECTION BACKGROUND SAME AS PORTFOLIO */
+.education-section{
+    padding: 80px 10%;
+    background: #f8fffb; /* same clean light theme */
+}
+
+/* SAME STYLE HEADING AS OTHER SECTIONS */
+.section-heading{
+    font-size: 45px;
+    color: #0f172a;
+    margin-bottom: 60px;
+    text-align: left; /* important: left aligned like other sections */
+}
+
+/* ROADMAP */
+.roadmap{
+    position: relative;
+    max-width: 900px;
+}
+
+/* CENTER LINE */
+.roadmap::after{
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #38f8b5;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* EACH BLOCK */
+.road-item{
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+}
+
+/* LEFT SIDE */
+.road-item.left{
+    left: 0;
+    text-align: right;
+}
+
+/* RIGHT SIDE */
+.road-item.right{
+    left: 50%;
+}
+
+/* DOTS ON LINE */
+.road-item::before{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #38f8b5;
+    border-radius: 50%;
+    top: 25px;
+    box-shadow: 0 0 10px #38f8b5;
+}
+
+.road-item.left::before{
+    right: -9px;
+}
+
+.road-item.right::before{
+    left: -9px;
+}
+
+/* CONTENT CARD */
+.content{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
+.content h3{
+    margin: 0;
+    color: #0f172a;
+}
+
+.content p{
+    margin: 5px 0;
+    color: #475569;
+}
+
+.content span{
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* MOVING DOT ANIMATION */
+.moving-dot{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: #38f8b5;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #38f8b5;
+    animation: move 6s linear infinite;
+}
+
+/* ANIMATION PATH */
+@keyframes move {
+    0%   { top: 0%; }
+    50%  { top: 50%; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* HEADER */
+.terminal-header{
+    background: #1e293b;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* DOTS */
+.dot{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.red{
+    background: #ff5f56;
+}
+
+.yellow{
+    background: #ffbd2e;
+}
+
+.green{
+    background: #27c93f;
+}
+
+/* CONTENT */
+.terminal-content{
+    padding: 35px;
+    font-family: monospace;
+    color: #38f8b5;
+    line-height: 1.8;
+}
+
+.terminal-content h2{
+    color: white;
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+
+.terminal-content p{
+    margin: 0;
+    font-size: 18px;
+}
 
         /* SKILLS */
         .skills-section {
@@ -99,8 +271,44 @@
 }
 
         /* EXPERIENCE */
-        .experience-item { margin-bottom: 20px; }
+        .experience-section{
+    padding: 80px 10%;
+    background: #f8fffb;
+}
 
+/* HEADING */
+.section-heading{
+    font-size: 45px;
+    color: #0f172a;
+    margin-bottom: 50px;
+}
+
+/* MAIN BLOCK */
+.experience-block{
+    max-width: 900px;
+    margin: auto;
+}
+
+/* EACH EXPERIENCE ITEM */
+.exp-item{
+    margin-bottom: 35px;
+    padding-left: 15px;
+    border-left: 4px solid #38f8b5;
+}
+
+/* TITLE */
+.exp-item h3{
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+.exp-item p{
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
         /* PROJECTS */
  
          .projects {
@@ -182,13 +390,116 @@
     font-weight: bold;
 }
 
-}
+
         /* ACHIEVEMENTS */
         .achievements ul { line-height: 1.8; }
 
         /* CONTACT */
-        .contact a { color: #047857; text-decoration: none; font-weight: bold; }
+        
+.contact-section{
+    padding: 80px 10%;
+    background: #f8fffb;
+}
 
+.section-heading{
+    font-size: 45px;
+    color: #0f172a;
+    margin-bottom: 40px;
+}
+
+/* MAIN LAYOUT */
+.contact-container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* LEFT FORM */
+.contact-form-box{
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.contact-form-box h3{
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.contact-form-box input,
+.contact-form-box textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #38f8b5;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* FOCUS EFFECT */
+.contact-form-box input:focus,
+.contact-form-box textarea:focus{
+    border-color: #2dd4a7;
+    box-shadow: 0 0 8px rgba(56,248,181,0.4);
+}
+
+/* BUTTON */
+.contact-form-box button{
+    width: 100%;
+    padding: 12px;
+    background: #38f8b5;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form-box button:hover{
+    background: #2dd4a7;
+    transform: translateY(-2px);
+}
+
+/* RIGHT SOCIAL SECTION */
+.contact-social{
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-social h3{
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+/* SOCIAL CARDS */
+.social-card{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #38f8b5;
+    border-radius: 12px;
+    color: #0f172a;
+    transition: 0.3s;
+    background: white;
+}
+
+/* HOVER EFFECT */
+.social-card:hover{
+    background: #38f8b5;
+    transform: translateX(8px);
+}
+
+.social-card span{
+    display: block;
+    font-size: 13px;
+    color: #475569;
+}
         /* FOOTER */
         footer { text-align: center; padding: 20px; background: #a7f3d0; margin-top: 40px; }
 
@@ -252,22 +563,48 @@
     in projects, and strive to grow as a developer every day.
         </p>
     </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
+     <section class="education" id="education">
         <h3>Education</h3>
-        <div class="education-item">
-            <h4>B.Tech in Computer Engineering</h4> 
-            <p>MIT Academy of Engineering , Pune | 2025 - 2029</p> <br><br>
-            <h4>Higher Secondary Education : </h4>
-             <p>Sanjay Ghodawat IIT and Medical Academy (SGIMA) | 2023-2025 <br>
-             Class 12th board percentage = 80% (HSC Boards)</p>  <br><br>
-             <h4>Secondary Education : </h4><p>
-             Sinhgad Public School | 2023 <br>
-             Class 10th board percentage = 97% (CBSE Board)</p>
-            
+    
+
+    <div class="roadmap">
+
+        <!-- MOVING DOT -->
+        <div class="moving-dot"></div>
+
+        <!-- ITEM 1 -->
+        <div class="road-item left">
+            <div class="content">
+                <h3>Secondary Education</h3>
+                <p>Sinhgad Public School</p>
+                <span>2023</span>
+                <p>CBSE Percentage: 97%</p>
+            </div>
         </div>
-    </section>
+
+        <!-- ITEM 2 -->
+        <div class="road-item right">
+            <div class="content">
+                <h3>Higher Secondary Education</h3>
+                <p>Sanjay Ghodawat IIT & Medical Academy</p>
+                <span>2023 - 2025</span>
+                <p>HSC Percentage: 80%</p>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="road-item left">
+            <div class="content">
+               <h3>B.Tech in Computer Engineering</h3>
+                <p>MIT Academy of Engineering, Pune</p>
+                <span>2025 - 2029</span>
+                <p>CGPA (First Semester): 8.9</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
     <!-- SKILLS -->
     <!DOCTYPE html>
@@ -341,7 +678,7 @@
 
     /* Python */
     .python {
-        width: 80%;
+        width: 70%;
         background: linear-gradient(90deg, #56ab2f, #a8e063);
         box-shadow: 0 0 15px #56ab2f;
     }
@@ -408,32 +745,49 @@
     <!-- EXPERIENCE -->
     <section id="experience">
         <h3>Experience</h3>
-        <div class="experience-item">
-          <b><p style="color:#065f46; font-size: 25px;">Personal Projects Experience</p></b><br>
-           Frontend & Web Development (Self Projects)<br>
+    <div class="experience-block">
 
-Developed multiple web-based projects including a digital portfolio and finance management system
-Implemented responsive UI using HTML and CSS
-Focused on user experience and interactive design elements<br><br>
- <b><p style="color:#065f46; font-size: 25px;">Academic Experience</p></b><br>
- Digital Electronics Project – Parking Counter System
- Designed a bidirectional car parking counter using logic gates and sensors
- Implemented real-time vehicle counting system
- Improved understanding of sequential logic and circuit design<br><br>
-
- <b><p style="color:#065f46; font-size: 25px;">Technical Experience</p></b><br>
-         IoT-Based Electronic Voting Machine
-Built a smart voting system using Arduino and IoT modules
-Integrated real-time data transmission and vote tracking
-Explored embedded systems and hardware-software integration<br><br>
-
- <b><p style="color:#065f46; font-size: 25px;">Learning / Skill Development</p></b><br>
-Technical Skill Development
-Learning programming languages including C, Python, and Java
-Exploring web development and IoT technologies
-Practicing problem-solving and logical thinking
-
+        <!-- PERSONAL PROJECT EXPERIENCE -->
+        <div class="exp-item">
+            <h3>Personal Project Experience</h3>
+            <p>
+                Frontend and Web Development, developed multiple web-based projects including a digital portfolio
+                and a finance management system, implemented responsive UI using HTML and CSS, focused on user
+                experience and interactive design elements.
+            </p>
         </div>
+
+        <!-- ACADEMIC EXPERIENCE -->
+        <div class="exp-item">
+            <h3>Academic Experience</h3>
+            <p>
+                Design Digital Electronics Project – Parking Counter System, designed a bi-directional car parking
+                counter using logic gates and sensors, implemented real-time vehicle counting system, improved
+                understanding of sequential logic and circuit design.
+            </p>
+        </div>
+
+        <!-- TECHNICAL EXPERIENCE -->
+        <div class="exp-item">
+            <h3>Technical Experience</h3>
+            <p>
+                IoT-based distance measurement using ultrasonic sensor is designed for accurate and real-time
+                non-contact distance sensing solution.
+            </p>
+        </div>
+
+        <!-- LEARNING / SKILLS -->
+        <div class="exp-item">
+            <h3>Learning & Skill Development</h3>
+            <p>
+                Technical skill development, learning programming languages including C, Python, C++, HTML, CSS,
+                exploring web development and IoT technologies, practicing problem-solving and logical thinking.
+            </p>
+        </div>
+
+    </div>
+
+
     </section>
 
     <!-- PROJECTS -->
@@ -456,7 +810,7 @@ Practicing problem-solving and logical thinking
                 <div class="card-back">
                     <p><b>Tech:</b>HTML,CSS</p>
                     <p>Designed and developed a responsive personal portfolio to showcase projects, skills, and achievements.</p>
-                    <a href="#">Live Demo</a>
+                    <a href="https://drive.google.com/file/d/1MZej53U0o72ChFOLEvYejhUn0F6Amcxu/view?usp=drivesdk ">Live Demo</a>
                 </div>
 
             </div>
@@ -504,7 +858,7 @@ Practicing problem-solving and logical thinking
                     <p>Designed a user-friendly website to help hostel and PG students manage daily expenses and budgets efficiently.
                        Implemented expense tracking, budget planning, and simple UI for easy financial monitoring.
                        Helps students develop better financial habits and avoid overspending.</p>
-                    <a href="#">Live Demo</a>
+                    <a href="https://drive.google.com/file/d/12Ffd95sDXcao6IaVDZCo6vRpXrGb8-M_/view?usp=drivesdk">Live Demo</a>
                 </div>
 
             </div>
@@ -518,17 +872,17 @@ Practicing problem-solving and logical thinking
 
                 <!-- FRONT -->
                 <div class="card-front">
-                    <h2>IoT-Based Electronic Voting Machine</h2><br>
-                    <p>Secure and real-time digital voting solution</p>
+                    <h2>IoT-Based Distance Measurement using Ultrasonic Sensor</h2><br>
+                    <p>Accurate and real-time non-contact distance sensing solution</p>
                 </div>
 
                 <!-- BACK -->
                 <div class="card-back">
-                    <p><b>Tech:</b> Arduino, IoT Modules, Embedded C</p>
-                    <p>Designed and developed a smart voting system that records votes electronically and transmits data in real time using IoT technology.
-                       Integrated hardware components with IoT for secure vote casting and live monitoring.
-                       Improves voting reliability, reduces fraud, and ensures faster result processing.</p>
-                    <a href="#">Live Demo</a>
+                    <p><b>Tech:</b> Arduino, Ultrasonic sensor(HC-SR04)</p>
+                    <p>Designed and developed a real-time distance measurement system using an ultrasonic sensor.
+                        The system calculates distance by measuring the time taken for ultrasonic waves to reflect from an object.
+                        Improves measurement efficiency and is useful in automation and obstacle detection applications.</p>
+                    <a href="https://drive.google.com/file/d/106aoxUUxC42OvvKU4TlOv6uN_LXcob0b/view?usp=drivesdk ">Live Demo</a>
                 </div>
 
             </div>
@@ -743,12 +1097,53 @@ function closeModal() {
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-        <h3>Contact Me</h3>
-        <p>Email: siddhishingate9922@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/siddhi-shingate-3a8280386" target="_blank">linkedin.com/in/yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com/siddhishingate9922-web" target="_blank">github.com/yourusername</a></p>
-    </section>
+        <h3>Contact</h3>
+    <div class="contact-container">
 
+        <!-- LEFT: FORM -->
+        <div class="contact-form-box">
+
+            <h3>Send a Message 💬</h3>
+
+            <form>
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <textarea rows="6" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+
+        <!-- RIGHT: SOCIAL LINKS -->
+        <div class="contact-social">
+
+            <h3>Connect With Me 🌐</h3>
+
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="social-card">
+                📧 Gmail
+                <span>Send me an email</span>
+            </a>
+
+            <a href="https://github.com/siddhishingate9922-web" target="_blank" class="social-card">
+                💻 GitHub
+                <span>View my projects</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/siddhi-shingate-3a8280386" target="_blank" class="social-card">
+                💼 LinkedIn
+                <span>Connect professionally</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- FOOTER -->
     <footer>
         <p>Built with passion by Siddhi Shingate © 2026</p>
